@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Professor_3
+comment1.params=nome\ departamento\ nregistro\ dia\ mes\ ano
+comment1.target=Professor_3(java.lang.String,\ java.lang.String,\ int,\ byte,\ byte,\ short)
+comment2.params=
+comment2.target=void\ imprime()
+numComments=3

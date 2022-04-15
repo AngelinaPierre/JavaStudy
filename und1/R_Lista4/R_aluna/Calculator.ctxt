@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Calculator
+comment1.params=v1\ v2\ sim
+comment1.target=Calculator(double,\ double,\ char)
+comment2.params=v1
+comment2.target=void\ setValue1(double)
+comment3.params=v2
+comment3.target=void\ setValue2(double)
+comment4.params=sim
+comment4.target=void\ setSimbolo(char)
+comment5.params=
+comment5.target=double\ getValue1()
+comment6.params=
+comment6.target=double\ getValue2()
+comment7.params=
+comment7.target=char\ getSimbolo()
+comment8.params=
+comment8.target=void\ showData()
+comment9.params=n1\ n2\ sim
+comment9.target=void\ calculate(double,\ double,\ char)
+numComments=10

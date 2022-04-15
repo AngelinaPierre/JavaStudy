@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Primes
+comment1.params=num
+comment1.target=java.lang.Boolean\ Prime(int)
+comment2.params=start\ end
+comment2.target=void\ primeRange(int,\ int)
+numComments=3

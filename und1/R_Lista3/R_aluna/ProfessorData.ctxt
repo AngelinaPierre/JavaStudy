@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=ProfessorData
+comment1.params=np\ nd\ da\ numR
+comment1.target=ProfessorData(java.lang.String,\ java.lang.String,\ Data,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Professor\r\n
+comment2.params=
+comment2.target=void\ showData()
+numComments=3

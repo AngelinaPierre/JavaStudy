@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=EntradaDeCinema
+comment1.params=dataDoFilme\ horario\ sala\ valor
+comment1.target=EntradaDeCinema(Data,\ float,\ int,\ float)
+comment2.params=dataNascimento
+comment2.target=void\ calculaDesconto(Data)
+comment3.params=dataNascimento\ numCarteira
+comment3.target=void\ calculaDesconto(Data,\ int)
+comment4.params=
+comment4.target=void\ calculaDescontoHorario()
+comment5.params=
+comment5.target=void\ imprimeIngresso()
+numComments=6

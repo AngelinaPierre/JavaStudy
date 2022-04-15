@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Fibonacci
+comment1.params=termos
+comment1.target=void\ calculaFibonacci(int)
+comment2.params=n
+comment2.target=boolean\ achaNumero(int)
+numComments=3

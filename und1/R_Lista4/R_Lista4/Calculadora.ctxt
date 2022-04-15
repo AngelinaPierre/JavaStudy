@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Calculadora
+comment1.params=n1\ n2\ operador
+comment1.target=Calculadora(double,\ double,\ char)
+comment2.params=
+comment2.target=void\ operacao()
+comment3.params=
+comment3.target=void\ imprimeResultado()
+comment4.params=n1
+comment4.target=void\ setN1(float)
+comment5.params=n2
+comment5.target=void\ setN2(float)
+comment6.params=operador
+comment6.target=void\ setOperador(char)
+comment7.params=
+comment7.target=double\ getN1()
+comment8.params=
+comment8.target=double\ getN2()
+comment9.params=
+comment9.target=char\ getOperador()
+numComments=10

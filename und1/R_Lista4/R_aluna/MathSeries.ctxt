@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=MathSeries
+comment1.params=x\ y
+comment1.target=MathSeries(int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MathSeries\r\n
+comment2.params=
+comment2.target=void\ showElevateTo()
+comment3.params=
+comment3.target=float\ elevateTo()
+comment4.params=qtd
+comment4.target=float\ piSquare8(int)
+comment5.params=qtd
+comment5.target=float\ calculatePI(int)
+comment6.params=x
+comment6.target=void\ setX(int)
+comment7.params=y
+comment7.target=void\ setY(int)
+comment8.params=
+comment8.target=int\ getX()
+comment9.params=
+comment9.target=int\ getY()
+numComments=10

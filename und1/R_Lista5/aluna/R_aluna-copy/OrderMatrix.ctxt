@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=OrderMatrix
+comment1.params=l\ c
+comment1.target=OrderMatrix(int,\ int)
+comment2.params=
+comment2.target=OrderMatrix()
+comment3.params=
+comment3.target=void\ showOrder()
+comment4.params=l
+comment4.target=void\ setLine(int)
+comment5.params=c
+comment5.target=void\ setColumn(int)
+comment6.params=
+comment6.target=int\ getLine()
+comment7.params=
+comment7.target=int\ getColumn()
+numComments=8

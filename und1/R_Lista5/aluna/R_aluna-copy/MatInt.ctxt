@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=MatInt
+comment1.params=o
+comment1.target=MatInt(OrderMatrix)
+comment2.params=l\ c\ v
+comment2.target=void\ addMatrixInt(int,\ int,\ int)
+comment3.params=m
+comment3.target=boolean\ isSquare(MatInt)
+comment4.params=
+comment4.target=int\ MatrixTotalValue()
+comment5.params=val
+comment5.target=int\ SearchValueInLine(int)
+numComments=6

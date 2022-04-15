@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=AutomovelBasico
+comment1.params=m\ c\ comb\ r\ l\ af
+comment1.target=AutomovelBasico(java.lang.String,\ java.lang.String,\ byte,\ boolean,\ boolean,\ boolean)
+comment2.params=m\ c\ comb
+comment2.target=AutomovelBasico(java.lang.String,\ java.lang.String,\ byte)
+comment3.params=
+comment3.target=float\ quantoCusta()
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5

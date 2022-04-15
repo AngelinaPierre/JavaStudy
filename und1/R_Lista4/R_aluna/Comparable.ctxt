@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Comparable
+comment1.params=v
+comment1.target=Comparable(int)
+comment2.params=v
+comment2.target=void\ setValue(int)
+comment3.params=
+comment3.target=int\ getValue()
+comment4.params=v
+comment4.target=java.lang.Boolean\ highEqual(int)
+comment5.params=v
+comment5.target=java.lang.Boolean\ lessEqual(int)
+comment6.params=v
+comment6.target=java.lang.Boolean\ differentFrom(int)
+numComments=7

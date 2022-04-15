@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Fibonnaci
+comment1.params=qtd
+comment1.target=Fibonnaci(int)
+comment2.params=num
+comment2.target=boolean\ findNumber(int)
+numComments=3

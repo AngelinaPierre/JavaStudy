@@ -1,0 +1,83 @@
+MODELO PSEUDO-CODIGO RESTAURANTE
+
+inicio
+	Dados Mesa, QKG, QtdRef, QtdCer,
+	QtdPessoas, QtdSobremesa, Total,
+	TotalPessoas, PKG = 30, PRef=6,
+	PCer=10, PSobremesa=6;
+
+	InicializarMesa(Numero, QtdP)
+	<inicio>
+		Mesa = Numero;
+		QtdPessoas=QtdP;
+		QKG = 0;
+		QtdRef=0;
+		QtdCer=0;
+		QtdSobremesa=0;
+		Total=0;
+	<fim>
+
+	PedidoCerveja(Qtd)
+	<inicio>
+		QtdCer=Qtdcer + Qtd;
+	<fim>
+	
+	PedidoRefrigerante(Qtd)
+	<inicio>
+		QtdRef=QtdRef+Qtd;
+	<fim>
+
+	PedidoKG(KG)
+	<inicio>
+		QKG = QKG + KG;
+	<fim>
+	
+	PedidoSobremesa(Qtd)
+	<inicio>
+		QtdSobremesa=QtdSobremesa+Qtd;
+	<fim>
+
+	AcrescentaPessoa(Qtd)
+	<inicio>
+		QtdPessoas=QtdPessoas+Qtd
+	<fim>
+
+	ConsumoTotal(Gorgeta)
+	<inicio>
+		Total=(QtdCer*PCer) + (QtdRef*PRef) + (QKG*PKG) + (QtdSobremesa*PSobremesa) + Gorjeta;
+	<fim>
+	
+	ValorPorPessoa(Valor)
+	<inicio>
+		TotalPessoa = Valor / QtdPessoas;
+	<fim>
+
+	ImprimeConta()
+	<inicio>
+		Escreva("Total da Conta = " +Total);
+		Escreva("Total por Pessoa = "+TotalPessoa);
+	<fim>
+
+===================Exercicios===================
+
+2 - Escreva um modelo para representar uma lâmpada que está à venda em um supermecado. QUe dados devem
+ser representados por esse modelo?
+
+3 - Imagine uma lâmpada que possa ter três estado: apagada, acesa e meia-luz. Usando o modelo "Lâmpada" 
+como base, escreva o modelo "LampadaTresEstados".
+
+4 - Inclua, no modelo "Lâmpada", uma operação "estáLigada" que retorne verdadeiro se a lâmpada estiver ligada
+e falso, caso contrário.
+
+
+
+
+
+
+
+
+
+
+
+
+

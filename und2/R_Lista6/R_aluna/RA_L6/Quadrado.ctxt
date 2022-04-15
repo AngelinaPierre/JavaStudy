@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Quadrado
+comment1.params=x1\ y1
+comment1.target=Quadrado(int,\ int)
+comment2.params=
+comment2.target=void\ desenha()
+comment3.params=
+comment3.target=void\ apaga()
+numComments=4

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Figura
+comment1.params=x1\ y1
+comment1.target=Figura(int,\ int)
+comment2.params=
+comment2.target=void\ desenha()
+comment3.params=
+comment3.target=void\ apaga()
+comment4.params=x1\ y1
+comment4.target=void\ move(int,\ int)
+numComments=5
