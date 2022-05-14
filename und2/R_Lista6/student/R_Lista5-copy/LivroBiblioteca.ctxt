@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=LivroBiblioteca
-comment1.params=isbn\ t\ a\ edit\ edic
-comment1.target=LivroBiblioteca(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
-comment2.params=usr\ d\ m\ a
-comment2.target=void\ emprestimo(java.lang.String,\ int,\ int,\ int)
-comment3.params=d\ m\ a
-comment3.target=void\ devolucao(int,\ int,\ int)
-numComments=4

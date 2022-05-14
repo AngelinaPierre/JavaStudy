@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=Aviao
-comment1.params=p\ qa\ qo\ m\ f
-comment1.target=Aviao(int,\ int,\ int,\ java.lang.String,\ java.lang.String)
-comment2.params=
-comment2.target=int\ getPrefixo()
-comment3.params=
-comment3.target=void\ imprimePrefixo()
-numComments=4
