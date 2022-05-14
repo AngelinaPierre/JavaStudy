@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=MatrizDeInteiros
+comment1.params=linha\ coluna
+comment1.target=MatrizDeInteiros(int,\ int)
+comment2.params=linha\ coluna\ value
+comment2.target=void\ add(int,\ int,\ int)
+comment3.params=
+comment3.target=boolean\ eQuadrada()
+comment4.params=search
+comment4.target=int\ pesquisa(int)
+comment5.params=
+comment5.target=void\ mostra()
+comment6.params=
+comment6.target=void\ soma()
+numComments=7

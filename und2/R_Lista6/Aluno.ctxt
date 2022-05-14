@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Aluno
+comment1.params=nome\ telefone\ endereco\ cpf\ identidade\ idade\ matricula\ nota1\ nota2\ nota3
+comment1.target=Aluno(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ float,\ float,\ float)
+comment2.params=matricula
+comment2.target=void\ setMatricula(int)
+comment3.params=
+comment3.target=int\ getMatricula()
+numComments=4

@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=VetorDeChar
+comment0.text=\r\n5.\tEscreva\ uma\ classe\ chamada\ \u201CVetorDeChar\u201D\ que\ tenha\ como\ atributo\ um\ vetor\ de\ char\ e\ um\ construtor\ que\ receba\ como\ par\u00E2metro\ uma\ frase.\r\n\ No\ construtor\ deve\ ser\ passada\ a\ frase\ para\ o\ vetor\ de\ char.\ \r\nDica\:\ Use\ o\ m\u00E9todo\ \u201CtoCharArray\u201D\ da\ classe\ String\ para\ colocar\ os\ elementos\ da\ frase\ no\ vetor.\ \ \r\nExemplo\:\ char\ vetor[]\ \=\ frase.toCharArray();\r\nAcrescente\ os\ seguintes\ m\u00E9todos\ a\ classe\:\r\na.\tum\ m\u00E9todo\ que\ retorne\ o\ n\u00FAmero\ de\ vogais\ existentes\ na\ frase.\r\nb.\tum\ m\u00E9todo\ que\ retorne\ o\ n\u00FAmero\ palavras\ iguais\ na\ frase.\r\n
+comment1.params=frase
+comment1.target=VetorDeChar(java.lang.String)
+comment2.params=
+comment2.target=int\ getVogais()
+comment3.params=z
+comment3.target=java.lang.String\ getPalavra(int)
+comment4.params=
+comment4.target=int\ getPalavrasIguais()
+numComments=5

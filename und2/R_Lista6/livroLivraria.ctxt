@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=livroLivraria
+comment1.params=isbn\ titulo\ autor\ editora\ edicao\ paginas\ preco\ qtd
+comment1.target=livroLivraria(int,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ float,\ int)
+comment2.params=Quantidade
+comment2.target=void\ vender(int)
+comment3.params=Quantidade
+comment3.target=void\ comprar(int)
+comment4.params=percentual
+comment4.target=void\ reajustePreco(float)
+comment5.params=
+comment5.target=void\ mostraDados()
+numComments=6

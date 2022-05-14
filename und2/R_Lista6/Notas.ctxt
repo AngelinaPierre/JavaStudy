@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Notas
+comment1.params=nota1\ nota2\ nota3
+comment1.target=Notas(float,\ float,\ float)
+comment10.params=media
+comment10.target=void\ setMedia(float)
+comment2.params=
+comment2.target=void\ calculaMedia()
+comment3.params=
+comment3.target=float\ getNota1()
+comment4.params=
+comment4.target=float\ getNota2()
+comment5.params=
+comment5.target=float\ getNota3()
+comment6.params=
+comment6.target=float\ getMedia()
+comment7.params=nota1
+comment7.target=void\ setNota1(float)
+comment8.params=nota2
+comment8.target=void\ setNota2(float)
+comment9.params=nota3
+comment9.target=void\ setNota3(float)
+numComments=11

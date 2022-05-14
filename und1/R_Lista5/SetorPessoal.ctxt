@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=SetorPessoal
+comment1.params=numeroFuncionarios
+comment1.target=SetorPessoal(int)
+comment2.params=obj
+comment2.target=void\ adicionaFuncinario(Funcionario)
+comment3.params=
+comment3.target=void\ imprimeFolha()
+comment4.params=
+comment4.target=float\ totalizaFolha()
+comment5.params=
+comment5.target=java.lang.String\ maiorSalario()
+comment6.params=departamentoF
+comment6.target=void\ mostraFuncionarios(int)
+comment7.params=funcaoF
+comment7.target=void\ mostraFuncao(java.lang.String)
+comment8.params=
+comment8.target=void\ imprimeFolhaPorSalario()
+numComments=9

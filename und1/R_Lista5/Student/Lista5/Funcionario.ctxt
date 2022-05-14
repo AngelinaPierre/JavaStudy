@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Funcionario
+comment1.params=mat\ dep\ n\ func\ sal
+comment1.target=Funcionario(int,\ int,\ java.lang.String,\ java.lang.String,\ float)
+comment10.params=func
+comment10.target=void\ setFuncao(java.lang.String)
+comment11.params=sal
+comment11.target=void\ setSalario(float)
+comment2.params=
+comment2.target=int\ getMatricula()
+comment3.params=
+comment3.target=int\ getDepartamento()
+comment4.params=
+comment4.target=java.lang.String\ getNome()
+comment5.params=
+comment5.target=java.lang.String\ getFuncao()
+comment6.params=
+comment6.target=float\ getSalario()
+comment7.params=mat
+comment7.target=void\ setMatricula(int)
+comment8.params=dep
+comment8.target=void\ setDepartamento(int)
+comment9.params=n
+comment9.target=void\ setNome(java.lang.String)
+numComments=12

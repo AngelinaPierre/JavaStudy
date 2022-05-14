@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=VetorDeChar
+comment1.params=frase
+comment1.target=VetorDeChar(java.lang.String)
+comment2.params=
+comment2.target=int\ getVogais()
+comment3.params=z
+comment3.target=java.lang.String\ getPalavra(int)
+comment4.params=
+comment4.target=int\ getPalavrasIguais()
+numComments=5

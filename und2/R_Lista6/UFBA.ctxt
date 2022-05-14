@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=UFBA
+comment1.params=nome\ telefone\ endereco\ cpf\ identidade\ idade\ horas\ horasAtendimento
+comment1.target=UFBA(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment2.params=
+comment2.target=void\ calculoSalario()
+comment3.params=
+comment3.target=int\ getHorasAtendimento()
+comment4.params=horas
+comment4.target=void\ setHorasAtendimento(int)
+numComments=5

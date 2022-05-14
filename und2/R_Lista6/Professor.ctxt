@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Professor
+comment1.params=nome\ telefone\ endereco\ cpf\ identidade\ idade\ horas
+comment1.target=Professor(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int)
+comment2.params=
+comment2.target=void\ calculoSalario()
+comment3.params=
+comment3.target=float\ getSalario()
+comment4.params=
+comment4.target=int\ getHoras()
+comment5.params=salario
+comment5.target=void\ setSalario(float)
+comment6.params=horas
+comment6.target=void\ getHoras(int)
+comment7.params=
+comment7.target=void\ mostraSalario()
+numComments=8

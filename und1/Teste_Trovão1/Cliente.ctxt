@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Cliente
+comment1.params=nConta\ nomeCliente\ saldo\ tipo
+comment1.target=Cliente(int,\ java.lang.String,\ float,\ byte)
+comment2.params=nConta
+comment2.target=void\ setnConta(int)
+comment3.params=nomeCliente
+comment3.target=void\ setnomeCliente(java.lang.String)
+comment4.params=saldo
+comment4.target=void\ setsaldo(float)
+comment5.params=tipo
+comment5.target=void\ settipo(byte)
+comment6.params=
+comment6.target=int\ getnConta()
+comment7.params=
+comment7.target=java.lang.String\ getnomeCliente()
+comment8.params=
+comment8.target=float\ getsaldo()
+comment9.params=
+comment9.target=byte\ gettipo()
+numComments=10

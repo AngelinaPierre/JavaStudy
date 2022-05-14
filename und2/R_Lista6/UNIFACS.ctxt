@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=UNIFACS
+comment1.params=nome\ telefone\ endereco\ cpf\ identidade\ idade\ horas\ horasPesquisa
+comment1.target=UNIFACS(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int,\ int,\ int)
+comment2.params=
+comment2.target=void\ calculoSalario()
+comment3.params=
+comment3.target=int\ getHorasPesquisa()
+comment4.params=horas
+comment4.target=void\ setHorasPesquisa(int)
+numComments=5
