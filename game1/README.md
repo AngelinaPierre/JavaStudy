@@ -248,6 +248,8 @@ public void displayHidden(){}
 [full code](https://github.com/SohamBhure/Minesweeper)
 
 <br>
+<hr>
+<br>
 
 ## Future Addition
 
@@ -261,18 +263,175 @@ public void displayHidden(){}
 <br>
 Theses are just a few suggestions that are clearly noticeable. However, remember that the sky is the limit!
 
+<br>
+<hr>
+<br>
+
+
+## GraphicUserInterface.java
+
+<br>
+
+
+### [1] IMPORTS
+
+<br>
+
+- `javax.swing`
+  - Swing é um widget toolkit GUI para uso com o Java. Ele é compatível com o Abstract Window Toolkit. A API Swing procura renderizar/desenhar por conta própria todos os componentes, ao invés de delegar essa tarefa ao sistema operacional, como a maioria das outras APIs de interface.
+
+- `java.util`
+  - Contains the collections framework, legacy collection classes, event model, date and time facilities, internationalization and miscellaneous utility classes (a string tokenizer, a random-number generator, and a bit array).
+
+- `java.awt`
+  - AWT é o toolkit gráfico original da linguagem de programação Java. Atualmente, AWT é parte da JFC, a API padrão para uma interface gráfica do usuário em um programa em Java. Um conjunto mais recente de interfaces da GUI, Swing, estende o AWT para que o programador possa criar objetos GUI generalizados independentes do sistema de janelas de um sistema operacional específico.
+
+<br>
+
+### [2] JFRAME
+
+<br>
+
+- The javax.swing.JFrame class is a type of container which inherits the java.awt.Frame class. JFrame works like the main window where components like labels, buttons, textfields are added to create a GUI. Unlike Frame, JFrame has the option to hide or close the window with the help of setDefaultCloseOperation(int) method.
+  		
+<br>
+
+### [3] CONSTRUCTOR
+<br>
+
+- Tamanho que queremos da tela.
+- Se ela será visivel ou nao.
+- Fechar ao clicar o X
+- O titulo que a janela tenha
+- Se queremos que ela tenha tamanhos variados
+  
+### [4] this.setSize(1286, 829);
+<br> 
+
+- O tamanho da tela seria de 1280x800, mas em cima de todas as janelas, podemos ver uma barra que possue o titulo e os botões de controle da mesma. Essa barra possui exatamente 29px. O mesmo vale para as bordas na esquerda e na direita, onde perdemos 3px pra cada.
+
+<br>
+  
+### [5] this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+<br>
+
+- Fecha a aplicação ao clicar no X
+  
+### [6] this.setVisible(true); 
+<br>
+
+- Sempre que a janela for criada, ela será visivel ou nao ao usuario, no caso, sim! (true).
+
+<br>
+
+### [7] this.setResizable(false);
+<br>
+
+- Bloqueia a janela para o usuario não alterar o tamanho
+
+<br>
+
+### [8] public class Tabuleiro
+<br>
+
+- Classe que irá representar o tabuleiro do jogo utilizando a biblioteca do java JPANEL.
+- `JPainel`
+  - The JPanel is a simplest container class. 
+  - It provides space in which an application can attach any other component. 
+  - It inherits the JComponents class.
+
+<br>
+
+### [9] public void paintComponent(Graphics g)
+<br>
+
+- Vamos chamar um metodo dentro da classe tabuleiro para renderizar os componentes.
+- Calls the UI delegate's paint method, if the UI delegate is non-<code>null</code>.  We pass the delegate a copy of the <code>Graphics</code> object to protect the rest of the paint code from irrevocable changes (for example, <code>Graphics.translate</code>).
+
+<br>
+
+### [10] Tabuleiro tab = new Tabuleiro();
+<br>
+
+- Instanciamos um objeto do tabuleiro dentro do construtor [3].
+
+<br>
+
+### [11] this.setContentPane(tab); 
+<br>
+
+- Apos instanciar a classe do tabuleiro, relacionamos ela a nossa classe da interface grafica.
+
+<br>
+
+### [12] Change the color
+<br>
+- Cria um retangulo na tela com a cor escolhida.
+
+<br>
+
+### [13] Laço para criação das grids das minas [16x9]
+<br>
+
+- Precisamos ter espaço no menu, logo colocamos 160
+- Criamos uma variavel chamada dist, para representar o espaço entre um retangulo e outro.
+
+<br>
+
+
+### [14] Criando classe do mouse 
+<br>
+- Adicionar hoover
+- Adicionar ação de click
+
+<br>
 
 
 
 
+<br>
+<hr>
+<br>
+
+## Main.java
 
 
+<br>
 
+### [1] Runnable
 
+<br>
 
+- Java runnable is an interface used to execute code on a (concurrent thread. It is an interface which is implemented by any class if we want that the instances of that class should be executed by a thread. The runnable interface has an undefined method run () with void as return type, and it takes in no arguments.
 
+<br>
+  
+### [2] public void run() 
+<br>
 
+- Usar o metodo run() para fazer o [refresh] do jogo na classe da interface grafica.
 
+<br>
+  
+### [3] GraphicUserInterface GUI = new GraphicUserInterface(); 
+<br>
+
+- Criar um objeto/instancia da classe GraphicUserInterface
+
+<br>
+  
+### [4] new Thread(new Main()).start();
+<br>
+
+- Criar uma Thread para quando rodarmos nosso jogo uma nova Thread vai iniciar, criando um metodo main() e rodando o run() metodo.
+
+<br>
+  
+### [5] while(true) -> refresh screen
+<br>
+
+- Criar um loop com um metodo para fazer o refresh da tela. [att()]
+  
 
 
 
