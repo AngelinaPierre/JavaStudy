@@ -1,5 +1,7 @@
 # Game 1
 
+
+
 ## Logic
 
 <br>
@@ -291,6 +293,8 @@ Theses are just a few suggestions that are clearly noticeable. However, remember
 ### [2] JFRAME
 
 <br>
+
+https://www.youtube.com/watch?v=EMu1cC2Vnis&list=PLGxHvpw-PAk6QvPw0fYe8bks31GRKvymK&index=3
 
 - The javax.swing.JFrame class is a type of container which inherits the java.awt.Frame class. JFrame works like the main window where components like labels, buttons, textfields are added to create a GUI. Unlike Frame, JFrame has the option to hide or close the window with the help of setDefaultCloseOperation(int) method.
   		
