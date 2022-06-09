@@ -385,13 +385,39 @@ https://www.youtube.com/watch?v=EMu1cC2Vnis&list=PLGxHvpw-PAk6QvPw0fYe8bks31GRKv
 
 ### [14] Criando classe do mouse 
 <br>
-- Adicionar hoover
-- Adicionar ação de click
+
 
 <br>
 
 
+### [15] criando a classe do click do mouse
 
+<br>
+<hr>
+<br>
+
+### [16] Criando instancias das classes do mouse e click
+<br>
+
+- Aplicação do mesmo conceito do tabuleiro
+
+<br>
+<hr>
+<br>
+
+### []
+
+<br>
+<hr>
+<br>
+
+### []
+
+<br>
+<hr>
+<br>
+
+### []
 
 <br>
 <hr>

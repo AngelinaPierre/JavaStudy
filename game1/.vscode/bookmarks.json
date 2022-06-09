@@ -54,33 +54,58 @@
 					"label": ""
 				},
 				{
-					"line": 398,
+					"line": 424,
 					"column": 12,
 					"label": ""
 				},
 				{
-					"line": 403,
+					"line": 429,
 					"column": 16,
 					"label": ""
 				},
 				{
-					"line": 411,
+					"line": 437,
 					"column": 26,
 					"label": ""
 				},
 				{
-					"line": 418,
+					"line": 444,
 					"column": 63,
 					"label": ""
 				},
 				{
-					"line": 425,
+					"line": 451,
 					"column": 39,
 					"label": ""
 				},
 				{
-					"line": 432,
+					"line": 458,
 					"column": 37,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "GraphicUserInterface.java",
+			"bookmarks": [
+				{
+					"line": 35,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 49,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 65,
+					"column": 8,
+					"label": ""
+				},
+				{
+					"line": 99,
+					"column": 8,
 					"label": ""
 				}
 			]
