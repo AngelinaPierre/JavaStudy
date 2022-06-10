@@ -9,7 +9,7 @@ public class Main implements Runnable { //[1]
     @Override
     public void run() { //[2]
         while(true){ //[5]
-            GUI.att();
+            GUI.repaint();
         }
     }
 }

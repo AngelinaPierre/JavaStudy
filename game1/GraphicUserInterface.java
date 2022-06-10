@@ -46,6 +46,17 @@ public class GraphicUserInterface extends JFrame{ //[2]
                 }
                 show[i][j] = false;
             }
+
+        }
+
+        for(int i = 0; i < 16;  i++){
+            for(int j = 0; j< 9; j++){
+                for(int k = 0; k < 16; k++){
+                    for(int z=0; z<9; z++){
+                        
+                    }
+                }
+            }
         }
 
     }
