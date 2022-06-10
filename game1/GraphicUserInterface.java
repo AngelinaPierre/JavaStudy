@@ -46,7 +46,6 @@ public class GraphicUserInterface extends JFrame{ //[2]
                 }
                 show[i][j] = false;
             }
-
         }
 
     }
