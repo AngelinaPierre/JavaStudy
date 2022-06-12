@@ -1,5 +1,6 @@
 // [1] 
 import javax.swing.JFrame;
+import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.swing.*;
 import java.util.*;
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.awt.event.MouseListener;
 
 public class GraphicUserInterface extends JFrame{ //[2]
 
-    int dist = 5;
+    int dist = 1;
     Random ale = new Random();
     public int coodX = -100;
     public int coodY = -100;
@@ -18,6 +19,18 @@ public class GraphicUserInterface extends JFrame{ //[2]
     int[][] visinhos = new int [16][9];
     boolean[][] show = new boolean[16][9];
     boolean[][] flags = new boolean[16][9];
+
+    int lados = 0;
+
+    public int iconeCoodX = 605;
+    public int iconeCoodY = 5;
+
+    public boolean icone1 = true;
+
+    Date tempoIni = new Date(); // inicio do programa
+    public int tempoX = 1200;
+    public int tempoY = 5;
+    public int segundos = 0;
 
     // [3]
     public GraphicUserInterface(){
@@ -39,7 +52,7 @@ public class GraphicUserInterface extends JFrame{ //[2]
 
         for(int i = 0; i < 16;  i++){
             for(int j = 0; j< 9; j++){
-                if(ale.nextInt(100) < 20){ // qtd of mines.
+                if(ale.nextInt(100) < 50){ // qtd of mines.
                     minas[i][j] = 1;
                 }else{
                     minas[i][j] = 0;
@@ -51,11 +64,17 @@ public class GraphicUserInterface extends JFrame{ //[2]
 
         for(int i = 0; i < 16;  i++){
             for(int j = 0; j< 9; j++){
+                lados = 0;
                 for(int k = 0; k < 16; k++){
                     for(int z=0; z<9; z++){
-                        
+                        if(!((k == i) && (z == j))){
+                            if(getVisinhos(i,j,k,z) == true){
+                                lados++;
+                            }
+                        }
                     }
                 }
+                visinhos[i][j] = lados;
             }
         }
 
@@ -69,14 +88,73 @@ public class GraphicUserInterface extends JFrame{ //[2]
             for(int i = 0; i < 16; i++){ // [13]
                 for(int j = 0; j < 9; j++){
                     graph.setColor(Color.RED);
+                    // if(minas[i][j] == 1){
+                    //     graph.setColor(Color.PINK);
+                    // }
                     if(show[i][j] == true){
-                        graph.setColor(Color.PINK);
+                        graph.setColor(Color.GRAY);
+                        if(minas[i][j] == 1){
+                            // se a mina existir vai mudar a cor para amarelo
+                            graph.setColor(Color.YELLOW);
+                        }
                     }
                     if( (coodX>=dist+i*80) && (coodX<i*80+80-dist)  && (coodY >= dist+j*80+106) && (coodY < j*80+186-dist)){
                         graph.setColor(Color.GREEN);
                     }
                     graph.fillRect(dist+i*80,dist+j*80+80,80-2*dist,80-2*dist);
+                    if(show[i][j] == true){
+                        graph.setColor(Color.RED);
+                        if(minas[i][j] == 0 && visinhos[i][j] != 0){
+                            // não possui minas, mostra o numero
+                            if(visinhos[i][j] == 1){ // cores dos numeros baseado no jogo original.
+                                graph.setColor(Color.BLUE);
+                            }else if(visinhos[i][j] == 2){
+                                graph.setColor(Color.GREEN);
+                            }else if(visinhos[i][j] == 3){
+                                graph.setColor(Color.RED);
+                            }else if(visinhos[i][j] == 4){
+                                graph.setColor(new Color(0,0,128));
+                            }else if(visinhos[i][j] == 5){
+                                graph.setColor(new Color(178,34,34));
+                            }else if(visinhos[i][j] == 6){
+                                graph.setColor(new Color(72,209,204));
+                            }else if(visinhos[i][j] == 8){
+                                graph.setColor(Color.DARK_GRAY); // BLACK BUT I CHANGED THE BACKGROUND
+                            }
+                            graph.setFont(new Font("Arial",Font.BOLD, 40));
+                            graph.drawString(Integer.toString(visinhos[i][j]), i*80+27, j*80+80+55);
+                        }else if(minas[i][j] == 1){
+                            // possui minas, mostra a mina, jogo termina!
+                            graph.fillRect(i*80+30, j*80+100, 20, 40);
+                            graph.fillRect(i*80+20, j*80+110, 40, 20);
+                            graph.fillRect(i*80+5+20, j*80+80+5+20, 30, 30);
+                        }
+                    }
                 }
+            }
+            // desenho do icone
+            graph.setColor(Color.YELLOW);
+            graph.fillOval(iconeCoodX, iconeCoodY, 70, 70);
+            graph.setColor(Color.BLACK);
+            graph.fillOval(iconeCoodX+15, iconeCoodY+15, 10, 10);
+            graph.fillOval(iconeCoodX+40, iconeCoodY+15, 10, 10);
+            graph.fillRect(iconeCoodX+20, iconeCoodY+50, 30, 5);
+
+            // temporizador
+            graph.setColor(Color.BLACK);
+            graph.fillRect(tempoX, tempoY, 140, 70); 
+            segundos = (int)((new Date().getTime()-tempoIni.getTime())/1000); 
+            if(segundos > 999){
+                segundos = 999;
+            }
+            graph.setColor(Color.WHITE);
+            graph.setFont(new Font("Arial",Font.PLAIN,80));
+            if(segundos < 10){
+                graph.drawString("00"+Integer.toString(segundos),tempoX, tempoY+65);
+            }else if(segundos < 100){
+                graph.drawString("0"+Integer.toString(segundos),tempoX, tempoY+65);
+            }else{
+                graph.drawString(Integer.toString(segundos), tempoX, tempoY+65);
             }
         }
     }
@@ -109,7 +187,7 @@ public class GraphicUserInterface extends JFrame{ //[2]
             }
 
             if(clickBoxX() != -1 && clickBoxY() != -1){
-                System.out.println("Mouse is in [" + clickBoxX() + "," + clickBoxY() + "]");
+                System.out.println("Mouse is in [" + clickBoxX() + "," + clickBoxY() + "], Minas vizinhas: " + visinhos[clickBoxX()][clickBoxY()]);
             }
             // System.out.println("The Mouse was clicked!");
         }
@@ -160,6 +238,16 @@ public class GraphicUserInterface extends JFrame{ //[2]
             }
         }
         return -1;
+    }
+
+    // função para checar os visinhos |pXY = caixa principal | vXY = vizinos
+    // vamos ver a diferença entre a caixa escolhida e seus vizinhos subtraindo os eixos
+    public boolean getVisinhos(int pX, int pY, int vX, int vY){
+        if( (pX - vX < 2) && (pX - vX > -2 ) && (pY - vY < 2) && (pY - vY > -2) && minas[vX][vY] == 1){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public void att(){}

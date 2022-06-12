@@ -89,11 +89,6 @@
 			"path": "GraphicUserInterface.java",
 			"bookmarks": [
 				{
-					"line": 11,
-					"column": 0,
-					"label": ""
-				},
-				{
 					"line": 12,
 					"column": 0,
 					"label": ""
@@ -109,7 +104,7 @@
 					"label": ""
 				},
 				{
-					"line": 16,
+					"line": 15,
 					"column": 0,
 					"label": ""
 				},
@@ -129,78 +124,83 @@
 					"label": ""
 				},
 				{
-					"line": 22,
-					"column": 0,
-					"label": ""
-				},
-				{
-					"line": 39,
-					"column": 0,
-					"label": ""
-				},
-				{
-					"line": 64,
+					"line": 21,
 					"column": 1,
 					"label": ""
 				},
 				{
-					"line": 83,
+					"line": 34,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 51,
+					"column": 0,
+					"label": ""
+				},
+				{
+					"line": 82,
+					"column": 1,
+					"label": ""
+				},
+				{
+					"line": 160,
 					"column": 8,
 					"label": ""
 				},
 				{
-					"line": 86,
+					"line": 163,
 					"column": 48,
 					"label": ""
 				},
 				{
-					"line": 92,
+					"line": 169,
 					"column": 46,
 					"label": ""
 				},
 				{
-					"line": 101,
+					"line": 178,
 					"column": 8,
 					"label": ""
 				},
 				{
-					"line": 104,
+					"line": 181,
 					"column": 48,
 					"label": ""
 				},
 				{
-					"line": 117,
+					"line": 194,
 					"column": 48,
 					"label": ""
 				},
 				{
-					"line": 123,
+					"line": 200,
 					"column": 49,
 					"label": ""
 				},
 				{
-					"line": 129,
+					"line": 206,
 					"column": 48,
 					"label": ""
 				},
 				{
-					"line": 135,
+					"line": 212,
 					"column": 47,
 					"label": ""
 				},
 				{
-					"line": 142,
+					"line": 219,
 					"column": 27,
 					"label": ""
 				},
 				{
-					"line": 153,
+					"line": 230,
 					"column": 27,
 					"label": ""
 				},
 				{
-					"line": 164,
-					"column": 23,
+					"line": 252,
+					"column": 0,
 					"label": ""
 				}
 			]
