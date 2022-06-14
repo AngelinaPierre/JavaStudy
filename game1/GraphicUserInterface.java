@@ -1,6 +1,5 @@
 // [1] 
 import javax.swing.JFrame;
-import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.swing.*;
 import java.util.*;
 import java.awt.*;
@@ -10,27 +9,43 @@ import java.awt.event.MouseListener;
 
 public class GraphicUserInterface extends JFrame{ //[2]
 
-    int dist = 1;
+    String msg1 = "Winner!";
+    String msg2 = "Noob, try again!";
+
+    Date tempoFim;
+
+    int dist = 1; // spacing
     Random ale = new Random();
-    public int coodX = -100;
-    public int coodY = -100;
+    public int coodX = -100; //mx
+    public int coodY = -100; //my
 
     int[][] minas = new int[16][9];
     int[][] visinhos = new int [16][9];
     boolean[][] show = new boolean[16][9];
     boolean[][] flags = new boolean[16][9];
 
-    int lados = 0;
+    int lados = 0; // neighs
 
-    public int iconeCoodX = 605;
-    public int iconeCoodY = 5;
+    public int iconeCoodX = 605; //smileyX
+    public int iconeCoodY = 5; // smileyY
 
-    public boolean icone1 = true;
+    public boolean icone1 = true; // happiness
 
     Date tempoIni = new Date(); // inicio do programa
-    public int tempoX = 1200;
+    public int tempoX = 1100; 
     public int tempoY = 5;
     public int segundos = 0;
+
+    public boolean vencedor = false;
+    public boolean noob = false; // defeat
+
+    public int iconeCoodCenterX = iconeCoodX + 35; //smileycenterX
+    public int iconeCoodCenterY = iconeCoodY + 35;
+
+    public boolean win = false; // resetter
+    
+    public int messageWin1 = 800;
+    public int messageWin2 = -300;
 
     // [3]
     public GraphicUserInterface(){
@@ -143,11 +158,18 @@ public class GraphicUserInterface extends JFrame{ //[2]
             // temporizador
             graph.setColor(Color.BLACK);
             graph.fillRect(tempoX, tempoY, 140, 70); 
-            segundos = (int)((new Date().getTime()-tempoIni.getTime())/1000); 
+            if(noob == false && vencedor == false){
+                segundos = (int)((new Date().getTime()-tempoIni.getTime())/1000); 
+            }
             if(segundos > 999){
                 segundos = 999;
             }
-            graph.setColor(Color.WHITE);
+            graph.setColor(Color.white);
+            if(vencedor == true){
+                graph.setColor(Color.GREEN);
+            }else if(noob == true){
+                graph.setColor(Color.RED);
+            }
             graph.setFont(new Font("Arial",Font.PLAIN,80));
             if(segundos < 10){
                 graph.drawString("00"+Integer.toString(segundos),tempoX, tempoY+65);
@@ -156,6 +178,10 @@ public class GraphicUserInterface extends JFrame{ //[2]
             }else{
                 graph.drawString(Integer.toString(segundos), tempoX, tempoY+65);
             }
+
+            // mensagem
+            
+
         }
     }
 
@@ -182,6 +208,10 @@ public class GraphicUserInterface extends JFrame{ //[2]
         @Override
         public void mouseClicked(MouseEvent e) {
             // TODO Auto-generated method stub
+
+            coodX = e.getX();
+            coodY = e.getY();
+
             if(clickBoxX() != -1 && clickBoxY() != -1){
                 show[clickBoxX()][clickBoxY()] = true;
             }
@@ -189,7 +219,12 @@ public class GraphicUserInterface extends JFrame{ //[2]
             if(clickBoxX() != -1 && clickBoxY() != -1){
                 System.out.println("Mouse is in [" + clickBoxX() + "," + clickBoxY() + "], Minas vizinhas: " + visinhos[clickBoxX()][clickBoxY()]);
             }
-            // System.out.println("The Mouse was clicked!");
+            
+            // reset
+            if(resetIcon() == true){
+                reset();
+            }
+            
         }
 
         @Override
@@ -250,8 +285,98 @@ public class GraphicUserInterface extends JFrame{ //[2]
         }
     }
 
-    public void att(){}
+    public void reset(){
+        tempoIni = new Date();
+        vencedor = false;
+        noob = false;
+        win = true;
+        messageWin2 = -300;
+        msg1 = "Winner!"; // deletar
 
+        for(int i = 0; i < 16;i++){
+            for(int j = 0; j < 9; j++){
+                if(ale.nextInt(100) < 20){
+                    minas[i][j] = 1;
+                }else{
+                    minas[i][j] = 0;
+                }
+                show[i][j] = false;                
+                flags[i][j] = false;
+            }
+        }
+
+        for(int i = 0; i< 16; i++){
+            for(int j = 0; j < 9; j++){
+                lados = 0;                
+                for(int k = 0; k < 16; k++){
+                    for(int z = 0; z < 9; z++){
+                        if((k!= i) && (z != j)){
+                            if(getVisinhos(i,j,k,z) == true){
+                                lados++;
+                            }
+                        }
+                    }
+                    visinhos[i][j] = lados;
+                }
+            }
+        }
+        win = false;
+    }
+
+    public boolean resetIcon(){ // inSmiley
+
+        tempoIni = new Date();
+
+        int diffPixels = (int) Math.sqrt(Math.abs(coodX-iconeCoodCenterX) * Math.abs    (coodX-iconeCoodCenterX) + Math.abs(coodY-iconeCoodCenterY)*Math.abs(coodY - iconeCoodCenterY));
+        if(diffPixels < 35){
+            return true;
+        }
+        return false;
+    }
+    // run continualies in the main method for checking the results.
+    public void winner(){ // checkvictorystatus
+        for(int i = 0; i < 16; i++){
+            for(int j = 0; j < 9; j++){
+                if(show[i][j] == true && minas[i][j] == 1){
+                    vencedor = false;
+                    noob = true;
+                    tempoFim = new Date();
+                    System.out.println("Press F");
+                }
+            }
+            if(pontosTotal() >= 144 - totalMinasFinal()){
+                vencedor = true;
+                // win = true;
+                tempoFim = new Date();
+            }
+        }
+    }
+
+    public int totalMinasFinal(){ //totalMines
+        int totalMinas = 0;
+
+        for(int i = 0; i < 16; i++){
+            for(int j = 0; j < 9; j++){
+                if(minas[i][j] == 1){
+                        totalMinas = totalMinas + 1;
+                }
+            }
+        }
+        return totalMinas;
+    }
+
+    public int pontosTotal(){ // totalBoxesRevelead
+        int totalPontos = 0;
+        for(int i = 0; i < 16;i++){
+            for(int j = 0; j < 9; j++){
+                if(show[i][j] == true){
+                    totalPontos = totalPontos + 1;
+                }
+
+            }
+        }
+        return totalPontos;
+    }
 
 }
 
