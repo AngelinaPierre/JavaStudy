@@ -11,9 +11,10 @@
         while(true){ //[5]
             GUI.repaint();
             if(GUI.win == false){
-                GUI.winner();
-                System.out.println("Winner:" + GUI.vencedor);
-                System.out.println("Noob:" + GUI.noob);
+                GUI.winner(); // roda continuamente para checagem
+                
+                // System.out.println("Winner:" + GUI.vencedor);                
+                // System.out.println("Noob:" + GUI.noob);
             }
         }
     }

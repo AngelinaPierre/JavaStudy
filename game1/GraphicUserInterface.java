@@ -9,33 +9,31 @@ import java.awt.event.MouseListener;
 
 public class GraphicUserInterface extends JFrame{ //[2]
 
-    String msg1 = "Winner!";
-    String msg2 = "Noob, try again!";
-
-    Date tempoFim;
-
-    int dist = 1; // spacing
-    Random ale = new Random();
+    public int dist = 1; // spacing
+    public Random ale = new Random();
     public int coodX = -100; //mx
     public int coodY = -100; //my
 
-    int[][] minas = new int[16][9];
-    int[][] visinhos = new int [16][9];
-    boolean[][] show = new boolean[16][9];
-    boolean[][] flags = new boolean[16][9];
+    public int[][] minas = new int[16][9];
+    public int qtdMinas = 97;
+    public int[][] visinhos = new int [16][9];
+    public boolean[][] show = new boolean[16][9];
+    public boolean[][] flags = new boolean[16][9];
 
-    int lados = 0; // neighs
+    public int lados = 0; // neighs
 
+    //70x70
     public int iconeCoodX = 605; //smileyX
     public int iconeCoodY = 5; // smileyY
 
     public boolean icone1 = true; // happiness
 
-    Date tempoIni = new Date(); // inicio do programa
+    public Date tempoIni = new Date(); // inicio do programa
     public int tempoX = 1100; 
     public int tempoY = 5;
     public int segundos = 0;
 
+    // variaveis para vencedores
     public boolean vencedor = false;
     public boolean noob = false; // defeat
 
@@ -43,31 +41,49 @@ public class GraphicUserInterface extends JFrame{ //[2]
     public int iconeCoodCenterY = iconeCoodY + 35;
 
     public boolean win = false; // resetter
-    
-    public int messageWin1 = 800;
-    public int messageWin2 = -300;
+
+    // variaveis para mensagens
+    public int messageCoodX = 700; //vicMesX
+    // public int messageWin2 = -300; // vicMesY 
+    public int messageCoodY = -50; // vicMesY
+    public String msg1 = "Winner!"; // VicMes = mensagem
+    public String msg2 = "Noob, try again!";
+
+    public Date tempoFim; //endDate
 
     // [3]
     public GraphicUserInterface(){
+
         this.setTitle("Campo Minado");
         this.setSize(1286,829); // [4]
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //[5]
         this.setVisible(true); //[6]
         this.setResizable(false); //[7]
 
+
+
+
         Tabuleiro tab = new Tabuleiro(); // [10]    
         this.setContentPane(tab); //[11]
+
+
+
 
         // [16]
         Mouse mouse = new Mouse();
         this.addMouseMotionListener(mouse);
 
+
+
+
         Click click = new Click();
         this.addMouseListener(click);
 
+
+
         for(int i = 0; i < 16;  i++){
             for(int j = 0; j< 9; j++){
-                if(ale.nextInt(100) < 50){ // qtd of mines.
+                if(ale.nextInt(100) < qtdMinas){ // qtd of mines.
                     minas[i][j] = 1;
                 }else{
                     minas[i][j] = 0;
@@ -76,6 +92,10 @@ public class GraphicUserInterface extends JFrame{ //[2]
             }
 
         }
+
+
+
+
 
         for(int i = 0; i < 16;  i++){
             for(int j = 0; j< 9; j++){
@@ -95,17 +115,26 @@ public class GraphicUserInterface extends JFrame{ //[2]
 
     }
 
+
+
+
     //[8]
     public class Tabuleiro extends JPanel{ 
+
+
         public void paintComponent(Graphics graph){ //[9]
+
+            // tabuleiro
             graph.setColor(Color.black); //[12]
             graph.fillRect(0, 0, 1280, 800); // [12]
             for(int i = 0; i < 16; i++){ // [13]
                 for(int j = 0; j < 9; j++){
+
                     graph.setColor(Color.RED);
-                    // if(minas[i][j] == 1){
-                    //     graph.setColor(Color.PINK);
-                    // }
+                    if(minas[i][j] == 1){
+                        graph.setColor(Color.PINK);
+                    }
+
                     if(show[i][j] == true){
                         graph.setColor(Color.GRAY);
                         if(minas[i][j] == 1){
@@ -113,12 +142,20 @@ public class GraphicUserInterface extends JFrame{ //[2]
                             graph.setColor(Color.YELLOW);
                         }
                     }
+
+
                     if( (coodX>=dist+i*80) && (coodX<i*80+80-dist)  && (coodY >= dist+j*80+106) && (coodY < j*80+186-dist)){
                         graph.setColor(Color.GREEN);
                     }
+
+
                     graph.fillRect(dist+i*80,dist+j*80+80,80-2*dist,80-2*dist);
+
+
                     if(show[i][j] == true){
+                        
                         graph.setColor(Color.RED);
+
                         if(minas[i][j] == 0 && visinhos[i][j] != 0){
                             // não possui minas, mostra o numero
                             if(visinhos[i][j] == 1){ // cores dos numeros baseado no jogo original.
@@ -147,6 +184,8 @@ public class GraphicUserInterface extends JFrame{ //[2]
                     }
                 }
             }
+
+
             // desenho do icone
             graph.setColor(Color.YELLOW);
             graph.fillOval(iconeCoodX, iconeCoodY, 70, 70);
@@ -155,22 +194,31 @@ public class GraphicUserInterface extends JFrame{ //[2]
             graph.fillOval(iconeCoodX+40, iconeCoodY+15, 10, 10);
             graph.fillRect(iconeCoodX+20, iconeCoodY+50, 30, 5);
 
+
+
+
             // temporizador
             graph.setColor(Color.BLACK);
-            graph.fillRect(tempoX, tempoY, 140, 70); 
+
+            graph.fillRect(tempoX, tempoY, 150, 70);
+
             if(noob == false && vencedor == false){
                 segundos = (int)((new Date().getTime()-tempoIni.getTime())/1000); 
             }
             if(segundos > 999){
                 segundos = 999;
             }
-            graph.setColor(Color.white);
+
+            graph.setColor(Color.WHITE);
+
             if(vencedor == true){
                 graph.setColor(Color.GREEN);
             }else if(noob == true){
                 graph.setColor(Color.RED);
             }
+
             graph.setFont(new Font("Arial",Font.PLAIN,80));
+
             if(segundos < 10){
                 graph.drawString("00"+Integer.toString(segundos),tempoX, tempoY+65);
             }else if(segundos < 100){
@@ -179,11 +227,30 @@ public class GraphicUserInterface extends JFrame{ //[2]
                 graph.drawString(Integer.toString(segundos), tempoX, tempoY+65);
             }
 
-            // mensagem
             
+            // mensagem
+            if(vencedor == true){
+                graph.setColor(Color.GREEN);
+                msg1 = "YOU WIN";
+            }else if(noob == true){
+                graph.setColor(Color.RED);
+                msg1 = "NOOB!";
+            }
 
+            // mostra a mensagem relativo ao tempo passado.
+            if(vencedor == true || noob == true){
+                messageCoodY = -50 + ((int)(new Date().getTime() - tempoFim.getTime()) / 10);
+                graph.setColor(Color.WHITE);
+                if(vencedor == true && messageCoodY > 67){
+                    messageCoodY = 67;
+                }
+                graph.setFont(new Font("Tahoma", Font.PLAIN, 70));
+                graph.drawString(msg1, messageCoodX, messageCoodY);
+            }
         }
     }
+
+
 
     public class Mouse implements MouseMotionListener { //[14]
 
@@ -203,6 +270,10 @@ public class GraphicUserInterface extends JFrame{ //[2]
         
     }
 
+
+
+
+
     public class Click implements MouseListener { //[15]
 
         @Override
@@ -216,6 +287,7 @@ public class GraphicUserInterface extends JFrame{ //[2]
                 show[clickBoxX()][clickBoxY()] = true;
             }
 
+            // not needed
             if(clickBoxX() != -1 && clickBoxY() != -1){
                 System.out.println("Mouse is in [" + clickBoxX() + "," + clickBoxY() + "], Minas vizinhas: " + visinhos[clickBoxX()][clickBoxY()]);
             }
@@ -285,17 +357,17 @@ public class GraphicUserInterface extends JFrame{ //[2]
         }
     }
 
-    public void reset(){
+    public void reset(){ // resetALl
         tempoIni = new Date();
         vencedor = false;
         noob = false;
         win = true;
-        messageWin2 = -300;
-        msg1 = "Winner!"; // deletar
+        messageCoodY = -300; // reseta para criar o movimento
+        msg1 = "Winner!"; // deletar not needed
 
         for(int i = 0; i < 16;i++){
             for(int j = 0; j < 9; j++){
-                if(ale.nextInt(100) < 20){
+                if(ale.nextInt(100) < qtdMinas){
                     minas[i][j] = 1;
                 }else{
                     minas[i][j] = 0;
@@ -325,36 +397,60 @@ public class GraphicUserInterface extends JFrame{ //[2]
 
     public boolean resetIcon(){ // inSmiley
 
-        tempoIni = new Date();
+        // bug no tempoo
+        // tempoIni = new Date();
 
-        int diffPixels = (int) Math.sqrt(Math.abs(coodX-iconeCoodCenterX) * Math.abs    (coodX-iconeCoodCenterX) + Math.abs(coodY-iconeCoodCenterY)*Math.abs(coodY - iconeCoodCenterY));
+        // c^2 = a^2 + b^2
+        int diffPixels = (int) Math.sqrt(Math.abs(coodX-iconeCoodCenterX) * Math.abs(coodX-iconeCoodCenterX) + Math.abs(coodY-iconeCoodCenterY)*Math.abs(coodY - iconeCoodCenterY));
         if(diffPixels < 35){
             return true;
         }
         return false;
     }
+
+    // metodos para vitoria
     // run continualies in the main method for checking the results.
+
     public void winner(){ // checkvictorystatus
-        for(int i = 0; i < 16; i++){
-            for(int j = 0; j < 9; j++){
-                if(show[i][j] == true && minas[i][j] == 1){
-                    vencedor = false;
-                    noob = true;
-                    tempoFim = new Date();
-                    System.out.println("Press F");
+        // loop para checar cada caixa e se ela tem minas
+        if(noob == false){
+            for(int i = 0; i < 16; i++){
+                for(int j = 0; j < 9; j++){
+                    if(show[i][j] == true && minas[i][j] == 1){
+                        vencedor = false;
+                        noob = true;
+                        tempoFim = new Date();
+                        System.out.println("Press F");
+                    }
                 }
             }
-            if(pontosTotal() >= 144 - totalMinasFinal()){
-                vencedor = true;
-                // win = true;
-                tempoFim = new Date();
-            }
+        }
+        if(pontosTotal() >= 144 - totalMinasFinal() && vencedor == false){
+            vencedor = true;
+            // win = true;
+            tempoFim = new Date();
+            System.out.println("Ganhoo!");
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public int totalMinasFinal(){ //totalMines
         int totalMinas = 0;
-
         for(int i = 0; i < 16; i++){
             for(int j = 0; j < 9; j++){
                 if(minas[i][j] == 1){
@@ -364,6 +460,20 @@ public class GraphicUserInterface extends JFrame{ //[2]
         }
         return totalMinas;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public int pontosTotal(){ // totalBoxesRevelead
         int totalPontos = 0;
