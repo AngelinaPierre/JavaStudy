@@ -51,6 +51,17 @@ public class GraphicUserInterface extends JFrame{ //[2]
 
     public Date tempoFim; //endDate
 
+    //butao de flag
+    public boolean flag = false;
+    public int flagCoodX = 445;
+    public int flagCoodY = 5;
+    public int flagCenterX = flagCoodX + 35;
+    public int flagCenterY = flagCoodY + 35;
+    public int flagRectX = 445;
+    public int flagRectY = 5;
+    
+
+
     // [3]
     public GraphicUserInterface(){
 
@@ -60,26 +71,15 @@ public class GraphicUserInterface extends JFrame{ //[2]
         this.setVisible(true); //[6]
         this.setResizable(false); //[7]
 
-
-
-
         Tabuleiro tab = new Tabuleiro(); // [10]    
         this.setContentPane(tab); //[11]
-
-
-
 
         // [16]
         Mouse mouse = new Mouse();
         this.addMouseMotionListener(mouse);
 
-
-
-
         Click click = new Click();
         this.addMouseListener(click);
-
-
 
         for(int i = 0; i < 16;  i++){
             for(int j = 0; j< 9; j++){
@@ -92,9 +92,6 @@ public class GraphicUserInterface extends JFrame{ //[2]
             }
 
         }
-
-
-
 
 
         for(int i = 0; i < 16;  i++){
@@ -114,9 +111,6 @@ public class GraphicUserInterface extends JFrame{ //[2]
         }
 
     }
-
-
-
 
     //[8]
     public class Tabuleiro extends JPanel{ 
@@ -181,6 +175,19 @@ public class GraphicUserInterface extends JFrame{ //[2]
                             graph.fillRect(i*80+20, j*80+110, 40, 20);
                             graph.fillRect(i*80+5+20, j*80+80+5+20, 30, 30);
                         }
+                    }
+
+                    // flags nas minas do jogo
+                    if(flags[i][j] == true){
+                        graph.setColor(Color.BLACK);
+                        graph.fillRect(i*80+32+5, j*80+80+15, 5, 40);
+                        graph.fillRect(i*80+20+5, j*80+80+50, 30, 10);
+                        graph.setColor(Color.RED);
+                        graph.fillRect(i*80+16+5, j*80+80+15, 20, 15);
+                        graph.setColor(Color.BLACK);
+                        graph.drawRect(i*80+16+5, j*80+80+15, 20, 15);
+                        graph.drawRect(i*80+17+5, j*80+80+16, 18, 13);
+                        graph.drawRect(i*80+18+5, j*80+80+17, 16, 11);
                     }
                 }
             }
@@ -247,6 +254,34 @@ public class GraphicUserInterface extends JFrame{ //[2]
                 graph.setFont(new Font("Tahoma", Font.PLAIN, 70));
                 graph.drawString(msg1, messageCoodX, messageCoodY);
             }
+
+            // botão da flag
+            
+            if(flag == true){
+                graph.setColor(Color.DARK_GRAY);
+                graph.fillRect(flagRectX, flagRectY, 60, 70);
+            }else{
+                graph.setColor(Color.WHITE);
+                graph.fillRect(flagRectX, flagRectY, 60, 70);
+            }
+            graph.setColor(Color.BLACK);
+            graph.fillRect(flagCoodX+32, flagCoodY+15, 5, 40);
+            graph.fillRect(flagCoodX+20, flagCoodY+50, 30, 10);
+            graph.setColor(Color.RED);
+            graph.fillRect(flagCoodX+16, flagCoodY+15, 20, 15);
+            graph.setColor(Color.BLACK);
+            graph.drawRect(flagCoodX+16, flagCoodY+15, 20, 15);
+            graph.drawRect(flagCoodX+17, flagCoodY+16, 18, 13);
+            graph.drawRect(flagCoodX+18, flagCoodY+17, 16, 11);
+
+
+            // com circulo
+            // graph.setColor(Color.WHITE);
+            // graph.drawOval(flagCoodX, flagCoodY, 70, 70);
+            // graph.drawOval(flagCoodX+1, flagCoodY+1, 68, 68);
+            // graph.drawOval(flagCoodX+2, flagCoodY+2, 66, 66);
+
+
         }
     }
 
@@ -271,9 +306,6 @@ public class GraphicUserInterface extends JFrame{ //[2]
     }
 
 
-
-
-
     public class Click implements MouseListener { //[15]
 
         @Override
@@ -283,19 +315,44 @@ public class GraphicUserInterface extends JFrame{ //[2]
             coodX = e.getX();
             coodY = e.getY();
 
-            if(clickBoxX() != -1 && clickBoxY() != -1){
-                show[clickBoxX()][clickBoxY()] = true;
-            }
+            // not needed , uniu com a função abaixo
+            // if(clickBoxX() != -1 && clickBoxY() != -1){
+            //     show[clickBoxX()][clickBoxY()] = true;
+            // }
 
             // not needed
             if(clickBoxX() != -1 && clickBoxY() != -1){
                 System.out.println("Mouse is in [" + clickBoxX() + "," + clickBoxY() + "], Minas vizinhas: " + visinhos[clickBoxX()][clickBoxY()]);
+                if(flag == true && show[clickBoxX()][clickBoxY()] == false){
+                    if(flags[clickBoxX()][clickBoxY()] == false){
+                        flags[clickBoxX()][clickBoxY()] = true;
+                        // flag = false;
+                    }else{
+                        flags[clickBoxX()][clickBoxY()] = false;
+                    }
+                }else{
+                    if(flags[clickBoxX()][clickBoxY()] == false){
+                        show[clickBoxX()][clickBoxY()] = true;
+                    }
+                }
             }
             
             // reset
             if(resetIcon() == true){
                 reset();
             }
+
+            // flag click
+            if(flagButton() == true){
+                if(flag  == false){
+                    flag = true;
+                    System.out.println("flag true");
+                }else{
+                    flag = false;
+                }
+            }
+
+
             
         }
 
@@ -364,6 +421,7 @@ public class GraphicUserInterface extends JFrame{ //[2]
         win = true;
         messageCoodY = -300; // reseta para criar o movimento
         msg1 = "Winner!"; // deletar not needed
+        flag = false;
 
         for(int i = 0; i < 16;i++){
             for(int j = 0; j < 9; j++){
@@ -408,6 +466,14 @@ public class GraphicUserInterface extends JFrame{ //[2]
         return false;
     }
 
+    public boolean flagButton(){
+        int diffPixels = (int) Math.sqrt(Math.abs(coodX-flagCenterX) * Math.abs(coodX-flagCenterX) + Math.abs(coodY-flagCenterY)*Math.abs(coodY - flagCenterY));
+        if(diffPixels < 35){
+            return true;
+        }
+        return false;
+    }
+
     // metodos para vitoria
     // run continualies in the main method for checking the results.
 
@@ -443,12 +509,6 @@ public class GraphicUserInterface extends JFrame{ //[2]
 
 
 
-
-
-
-
-
-
     public int totalMinasFinal(){ //totalMines
         int totalMinas = 0;
         for(int i = 0; i < 16; i++){
@@ -460,17 +520,6 @@ public class GraphicUserInterface extends JFrame{ //[2]
         }
         return totalMinas;
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
