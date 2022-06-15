@@ -9,13 +9,13 @@ import java.awt.event.MouseListener;
 
 public class GraphicUserInterface extends JFrame{ //[2]
 
-    public int dist = 1; // spacing
+    public int dist = 5; // spacing
     public Random ale = new Random();
     public int coodX = -100; //mx
     public int coodY = -100; //my
 
     public int[][] minas = new int[16][9];
-    public int qtdMinas = 97;
+    public int qtdMinas = 20;
     public int[][] visinhos = new int [16][9];
     public boolean[][] show = new boolean[16][9];
     public boolean[][] flags = new boolean[16][9];
@@ -47,7 +47,7 @@ public class GraphicUserInterface extends JFrame{ //[2]
     // public int messageWin2 = -300; // vicMesY 
     public int messageCoodY = -50; // vicMesY
     public String msg1 = "Winner!"; // VicMes = mensagem
-    public String msg2 = "Noob, try again!";
+    
 
     public Date tempoFim; //endDate
 
@@ -61,10 +61,13 @@ public class GraphicUserInterface extends JFrame{ //[2]
     public int flagRectY = 10;
     
     // botões para aumentar ou diminuir o espaço entre as caixas
-    public int dimSizeX = 250 + 30; //  
-    public int dimSizeY = 10;
-    public int aumSizeX = 330 + 30; //50 + 80
-    public int aumSizeY = 10;
+    // dimensoes para escrever ao lado dos botões
+    public int distX = 90;
+    public int distY = 10;
+    public int dimSizeX = distX + 160; //  
+    public int dimSizeY = distY;
+    public int aumSizeX = distX + 240; //50 + 80
+    public int aumSizeY = distY;
 
 
     // [3]
@@ -199,14 +202,23 @@ public class GraphicUserInterface extends JFrame{ //[2]
 
 
             // desenho do icone
-            graph.setColor(Color.YELLOW);
-            graph.fillOval(iconeCoodX, iconeCoodY, 70, 70);
+            // graph.setColor(Color.YELLOW);
+            // graph.fillOval(iconeCoodX, iconeCoodY, 70, 70);
+            // graph.setColor(Color.BLACK);
+            // graph.fillOval(iconeCoodX+15, iconeCoodY+15, 10, 10);
+            // graph.fillOval(iconeCoodX+40, iconeCoodY+15, 10, 10);
+            // graph.fillRect(iconeCoodX+20, iconeCoodY+50, 30, 5);
+
+            // desenho icone como retangulo e escrita do reset
+            // graph.setColor(Color.WHITE);
+            // graph.fillRect(iconeCoodX, iconeCoodY, 70, 70);            
+            graph.setColor(Color.RED);
+            graph.fillRect(iconeCoodX, iconeCoodY+5, 74, 60);
+            graph.setColor(Color.WHITE);
+            graph.fillRect(iconeCoodX+2, iconeCoodY+7, 70, 56);
             graph.setColor(Color.BLACK);
-            graph.fillOval(iconeCoodX+15, iconeCoodY+15, 10, 10);
-            graph.fillOval(iconeCoodX+40, iconeCoodY+15, 10, 10);
-            graph.fillRect(iconeCoodX+20, iconeCoodY+50, 30, 5);
-
-
+            graph.setFont(new Font("Arial", Font.PLAIN, 20));
+            graph.drawString("Restart", iconeCoodX+5, iconeCoodY+40);
 
 
             // temporizador
@@ -290,16 +302,56 @@ public class GraphicUserInterface extends JFrame{ //[2]
             // graph.drawOval(flagCoodX+2, flagCoodY+2, 66, 66);
 
             // botões para aumenta ou diminuir a distancia entre as caixas
-            // menos
+            // BOTÃO DE MENOS
             graph.setColor(Color.WHITE);
-            graph.fillRect(dimSizeX, dimSizeY, 60, 60);
+            graph.fillRect(distX, distY, 300, 60);
             graph.setColor(Color.BLACK);
-            graph.fillRect(dimSizeX+5, dimSizeY+5, 50, 50);
-            // mais
+            graph.fillRect(dimSizeX+20, dimSizeY+5, 50, 50);
+            // DESENHO DO SINAL DE MENOS
+            graph.setColor(Color.RED);
+            graph.fillRect(dimSizeX+35,dimSizeY+27,20,6);
+
+            // texto
+            graph.setColor(Color.BLACK);
+            graph.setFont(new Font("Arial", Font.PLAIN,40));
+            graph.drawString("Distância", distX+5, distY+45);
+
+            // BOTAO DE MAIS
             graph.setColor(Color.WHITE);
             graph.fillRect(aumSizeX, aumSizeY, 60, 60);
             graph.setColor(Color.BLACK);
             graph.fillRect(aumSizeX+5, aumSizeY+5, 50, 50);
+
+            // DESENHO SINAL DE MAIS
+            graph.setColor(Color.RED);
+            graph.fillRect(aumSizeX+20,aumSizeY+27,20,6);
+            graph.fillRect(aumSizeX+27, aumSizeY+20, 6, 20);
+
+            // numero do espaçamento
+            if(dist < 10){
+                graph.setColor(Color.WHITE);
+                graph.drawString(Integer.toString(dist),aumSizeX+75,aumSizeY+45);
+            }else{
+                graph.setColor(Color.WHITE);
+                graph.drawString(Integer.toString(dist),aumSizeX+65,aumSizeY+45);
+            }
+
+            // aula
+            // graph.setColor(Color.WHITE);
+            // graph.fillRect(distX, distY, 300, 60);
+
+            // graph.setColor(Color.BLACK);
+            // graph.fillRect(dimSizeX+5, dimSizeY+10, 50, 40);
+            // graph.fillRect(aumSizeX+5, aumSizeY+10, 50, 40);
+            // // texto
+            // graph.setColor(Color.BLACK);
+            // graph.setFont(new Font("Arial", Font.PLAIN,35));
+            // graph.drawString("Distância", distX+20, distY+40);
+
+            // graph.setColor(Color.RED);
+            // graph.fillRect(dimSizeX+15, dimSizeY+27, 20, 6);
+            // graph.fillRect(aumSizeX+15, aumSizeY+27, 20, 6);
+            // graph.fillRect(aumSizeX+22, aumSizeY+20, 6, 20);
         }
     }
 
@@ -332,6 +384,28 @@ public class GraphicUserInterface extends JFrame{ //[2]
 
             coodX = e.getX();
             coodY = e.getY();
+
+            if(
+                (coodX >= dimSizeX+20) && 
+                (coodX < dimSizeX+60) &&
+                (coodY >= dimSizeY+20) && 
+                (coodY < dimSizeY+60)
+            ){
+                dist--;
+                if(dist < 1){
+                    dist = 1;
+                }
+            }else if(
+                (coodX >= aumSizeX+20) && 
+                (coodX < aumSizeX+60) &&
+                (coodY >= aumSizeY+20) && 
+                (coodY < aumSizeY+60)
+            ){
+                dist++;
+                if(dist > 15){
+                    dist = 15;
+                }
+            }
 
             // not needed , uniu com a função abaixo
             // if(clickBoxX() != -1 && clickBoxY() != -1){
@@ -370,8 +444,15 @@ public class GraphicUserInterface extends JFrame{ //[2]
                 }
             }
 
+            // // ativando aumentar e diminuir a distancia 
+            // if((coodX >= dimSizeX + 20) && (coodX < dimSizeY+50) && (coodY >= dimSizeY + 20) && (coodY < dimSizeY+50) ){
+            //     dist--;
+            //     if(dist < 1){
+            //         dist = 1;
+            //     }
+            //     System.out.println("diminuindo");
+            // }
 
-            
         }
 
         @Override
@@ -517,16 +598,6 @@ public class GraphicUserInterface extends JFrame{ //[2]
         }
     }
 
-
-
-
-
-
-
-
-
-
-
     public int totalMinasFinal(){ //totalMines
         int totalMinas = 0;
         for(int i = 0; i < 16; i++){
@@ -538,8 +609,6 @@ public class GraphicUserInterface extends JFrame{ //[2]
         }
         return totalMinas;
     }
-
-
 
 
     public int pontosTotal(){ // totalBoxesRevelead
