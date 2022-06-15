@@ -58,8 +58,13 @@ public class GraphicUserInterface extends JFrame{ //[2]
     public int flagCenterX = flagCoodX + 35;
     public int flagCenterY = flagCoodY + 35;
     public int flagRectX = 445;
-    public int flagRectY = 5;
+    public int flagRectY = 10;
     
+    // botões para aumentar ou diminuir o espaço entre as caixas
+    public int dimSizeX = 250 + 30; //  
+    public int dimSizeY = 10;
+    public int aumSizeX = 330 + 30; //50 + 80
+    public int aumSizeY = 10;
 
 
     // [3]
@@ -125,9 +130,9 @@ public class GraphicUserInterface extends JFrame{ //[2]
                 for(int j = 0; j < 9; j++){
 
                     graph.setColor(Color.RED);
-                    if(minas[i][j] == 1){
-                        graph.setColor(Color.PINK);
-                    }
+                    // if(minas[i][j] == 1){
+                    //     graph.setColor(Color.PINK);
+                    // }
 
                     if(show[i][j] == true){
                         graph.setColor(Color.GRAY);
@@ -259,10 +264,13 @@ public class GraphicUserInterface extends JFrame{ //[2]
             
             if(flag == true){
                 graph.setColor(Color.DARK_GRAY);
-                graph.fillRect(flagRectX, flagRectY, 60, 70);
+                graph.fillRect(flagRectX, flagRectY, 60, 60);
+                
             }else{
+                graph.setColor(Color.RED);
+                graph.fillRect(flagRectX, flagRectY, 60, 60);
                 graph.setColor(Color.WHITE);
-                graph.fillRect(flagRectX, flagRectY, 60, 70);
+                graph.fillRect(flagRectX+2, flagRectY+2, 56, 56);
             }
             graph.setColor(Color.BLACK);
             graph.fillRect(flagCoodX+32, flagCoodY+15, 5, 40);
@@ -281,7 +289,17 @@ public class GraphicUserInterface extends JFrame{ //[2]
             // graph.drawOval(flagCoodX+1, flagCoodY+1, 68, 68);
             // graph.drawOval(flagCoodX+2, flagCoodY+2, 66, 66);
 
-
+            // botões para aumenta ou diminuir a distancia entre as caixas
+            // menos
+            graph.setColor(Color.WHITE);
+            graph.fillRect(dimSizeX, dimSizeY, 60, 60);
+            graph.setColor(Color.BLACK);
+            graph.fillRect(dimSizeX+5, dimSizeY+5, 50, 50);
+            // mais
+            graph.setColor(Color.WHITE);
+            graph.fillRect(aumSizeX, aumSizeY, 60, 60);
+            graph.setColor(Color.BLACK);
+            graph.fillRect(aumSizeX+5, aumSizeY+5, 50, 50);
         }
     }
 
@@ -343,7 +361,7 @@ public class GraphicUserInterface extends JFrame{ //[2]
             }
 
             // flag click
-            if(flagButton() == true){
+            if(flagButton() == true){ 
                 if(flag  == false){
                     flag = true;
                     System.out.println("flag true");
