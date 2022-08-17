@@ -1,0 +1,64 @@
+{
+	"files": [
+		{
+			"path": "src/secao11/README.md",
+			"bookmarks": [
+				{
+					"line": 6,
+					"column": 26,
+					"label": ""
+				},
+				{
+					"line": 142,
+					"column": 13,
+					"label": ""
+				},
+				{
+					"line": 275,
+					"column": 9,
+					"label": ""
+				},
+				{
+					"line": 290,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 298,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/secao12/README.md",
+			"bookmarks": [
+				{
+					"line": 12,
+					"column": 10,
+					"label": ""
+				},
+				{
+					"line": 19,
+					"column": 15,
+					"label": ""
+				},
+				{
+					"line": 26,
+					"column": 23,
+					"label": ""
+				},
+				{
+					"line": 33,
+					"column": 24,
+					"label": ""
+				},
+				{
+					"line": 40,
+					"column": 13,
+					"label": ""
+				}
+			]
+		}
+	]
+}

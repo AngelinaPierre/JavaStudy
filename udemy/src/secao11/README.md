@@ -290,11 +290,15 @@ Ou seja, elementos `public` podem ser acessados em todo o projeto, independente 
 
 ## Private
 
+- Permite apenas a utilização do elemento dentro da classe.
+
 <br>
 <hr>
 <br>
 
 ## Protected
+
+- Encapsulamento default permitindo o uso somente dentro do pacote.
 
 <br>
 <hr>
