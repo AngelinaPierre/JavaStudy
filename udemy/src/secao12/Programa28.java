@@ -6,6 +6,9 @@ public class Programa28{
         System.out.println(p1.getNome());
         System.out.println(p1.getAnoNascimento());
         System.out.println(p1.getEmail());
+        System.out.println(p1.toString());
+        System.out.println("\n");
+
 
         Aluno a1 = new Aluno("Vanessa da Silva","vanessa@hotmail.com","12345", 2001);
 
@@ -13,6 +16,9 @@ public class Programa28{
         System.out.println(a1.getAnoNascimento());
         System.out.println(a1.getRA());
         System.out.println(a1.getEmail());
+        System.out.println(a1);
+        System.out.println(a1.toString());
+        System.out.println("\n");
 
         
         Professor prof1 = new Professor("Andre da silva","Andre@outlook.com", 1976, "1353453");
@@ -21,6 +27,9 @@ public class Programa28{
         System.out.println(prof1.getAnoNascimento());
         System.out.println(prof1.getMatricula());
         System.out.println(prof1.getEmail());
+        System.out.println(prof1.toString());
+
+
 
         System.out.println("\n Fim do Programa!\n");
     }

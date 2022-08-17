@@ -12,11 +12,18 @@ public class Aluno extends Pessoa{
     }
 
     // GES
+    public String getNome(){
+        return "Aluno: " + super.getNome();
+    }
 
     public String getRA(){
         return this.ra;
     }
     public void setRA(String number){
         this.ra = number;
+    }
+
+    public String toString(){
+        return super.toString() + "\nR.A: " + this.ra;
     }
 }

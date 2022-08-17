@@ -35,4 +35,8 @@ public class Pessoa{
     public void setAnoNascimento(int ano){
         this.ano_nascimento = ano;
     }
+
+    public String toString(){
+        return "Nome: " + this.nome + " \nAno Nascimento: " + this.ano_nascimento;
+    }
 }

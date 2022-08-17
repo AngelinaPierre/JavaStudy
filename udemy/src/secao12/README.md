@@ -175,6 +175,67 @@ public class Professor extends Pessoa{
 ## Polimorfismo
 <br>
 
+Nas nossas aulas anteriores podemos observar que a classe `Pessoa` não `"herda"` de ninguem, isso seria verdadeiro? `não`.
+
+Toda classe no `java` herda por padrão de uma classe chamada `Object`. No processo de criação da classe no `eclipse` podemos observar no campo de `Superclass` o seguinte trecho `java.lang.Object` o que indica que a classe que estamos criando irá `herda` dessa classe default do java.
+
+- Quando criamos uma classe, por padrão essa classe é herdada da `classe Object`.
+
+Vimos tambem que quando uma classe herda de outra, ela tambem `herda` todos os `atributos e metodos` da classe Base.
+
+- Por examplo, um dos metodos que a nossa classe `Pessoa` herda da classe `Object` é o método `toString()`.
+- A função do `toString()` é imprimir o endereço de memoria do objeto.
+
+~~~
+System.out.println(p1);
+// é igual a
+System.out.println(p1.toString());
+
+~~~
+
+`Polimorfismo` = Objetos do mesmo tipo podem agir de formas diferentes.
+- Vamos ter o mesmo nome para o metodo, porem imprimindo coisas diferentes para cada classe.
+~~~ 
+[CLASSE PESSOA]
+
+public String toString(){
+    return "Nome: " + this.nome + " \nAno Nascimento: " + this.ano_nascimento;
+}
+
+[CLASSE PROFESSOR]
+
+public String toString(){
+    return super.toString() + "\n Matricula: " + this.matricula;
+}
+
+[CLASSE ALUNO]
+
+public String toString(){
+    return super.toString() + "\nR.A: " + this.ra;
+}
+~~~
+
+- Fizemos o polimorfismo com a classe `Object`, mãe de todas as classes.
+- Podemos tambem fazer com metodos que nos criamos dentro das classes.
+- Temos o `getNome()` dentro somente da classe `Pessoa` vamos criar um `getNome` dentro da classe `Aluno` concatenando com alguma informação extra que queremos mostrar.
+- Vamos fazer o mesmo para a classe de `Professor` tambem.
+
+~~~ 
+[CLASSE PESSOA]
+public String getNome(){
+    return this.nome;
+}
+[CLASSE PROFESSOR]
+public String getNome(){
+    return "Professor: " + super.getNome();
+}
+[CLASSE ALUNO]
+public String getNome(){
+        return "Aluno: " + super.getNome();
+}
+
+~~~
+
 <br>
 <hr>
 <br>
