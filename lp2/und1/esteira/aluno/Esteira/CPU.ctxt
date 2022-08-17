@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=CPU
+comment0.text=\n\ Classe\ CPU,\ reponsavel\ pelo\ processamento\ das\ quatros\ operacoes\n\ basicas\ em\ 16\ bits.\n\n\ @author\ Marcelo\ Benjamin\n
+comment1.params=x\ y
+comment1.target=int\ somar(int,\ int)
+comment1.text=\ Retorna\ o\ resultado\ da\ soma\ dos\ dois\ parametros\ passados,\n\ x\ e\ y.\n\ @param\ x\ 1o\ numero\ a\ somar\n\ @param\ y\ 2o\ numero\ a\ somar\n\ @return\ Retorna\ a\ soma\ de\ x+y\n
+comment2.params=x\ y
+comment2.target=int\ subtrair(int,\ int)
+comment2.text=\ Retorna\ o\ resultado\ da\ subtracao\ dos\ dois\ parametros\ passados,\n\ x\ e\ y.\n\ @param\ x\ Subtraendo\n\ @param\ y\ Subtrator\n\ @return\ Retorna\ a\ subtracao\ de\ x-y\n
+comment3.params=x\ y
+comment3.target=int\ multiplicar(int,\ int)
+comment3.text=\ Retorna\ o\ resultado\ da\ multiplicacao\ dos\ dois\ parametros\ passados,\n\ x\ e\ y.\n\ @param\ x\ Multiplicando\n\ @param\ y\ Multiplicador\n\ @return\ Retorna\ a\ multiplicacao\ de\ x*y\n
+comment4.params=x\ y
+comment4.target=float\ dividir(int,\ int)
+comment4.text=\ Retorna\ o\ resultado\ da\ divisao\ dos\ dois\ parametros\ passados,\n\ x\ e\ y.\n\ @param\ x\ 1o\ Dividendo\n\ @param\ y\ 2o\ Divisor\n\ @return\ Retorn\ a\ divisao\ de\ x\ por\ y\n
+numComments=5

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Memoria
+comment0.text=Classe\ Memoria,\ pertence\ a\ arquitetrua\ Intel.
+comment1.params=
+comment1.target=Memoria()
+comment1.text=Construtor\ padrao\ da\ classe\ Memoria.
+comment2.params=xyz
+comment2.target=Memoria(char)
+comment3.params=end\ b
+comment3.target=void\ setByte(int,\ char)
+comment4.params=end
+comment4.target=char\ getByte(int)
+numComments=5

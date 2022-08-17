@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=MemoriaIF
+comment0.text=\n\ Interface\ de\ Memoria.\ Declara\ quais\ s\uFFFDo\ os\ m\uFFFDtodos\ que\ dever\uFFFDo\ ser\ implementados\n\ por\ qualquer\ classe\ que\ implemente\ esta\ Interface.\n\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=end\ b
+comment1.target=void\ setByte(int,\ char)
+comment1.text=\ Metodo\ que\ insere\ um\ byte\ recebido\ como\ parametro\ em\ uma\ posi\u00E7ao\ recebida\ como\ par\uFFFDmetro.\n\ @param\ end\ Endere\u00E7o\ onde\ sera\ armazenado\ o\ byte\ <CODE>b</CODE>.\n\ @param\ b\ Byte\ a\ ser\ armazenado\ na\ posi\u00E7ao\ <CODE>end</CODE>.\n
+comment2.params=end
+comment2.target=char\ getByte(int)
+comment2.text=\ Metodo\ que\ retorna\ um\ byte\ armazenado\ em\ um\ determindao\ endere\u00E7o\ de\ memoria.\n\ @param\ end\ Endereoo\ onde\ esta\ armazenado\ o\ byte\ desejado.\n\ @return\ Retorna\ o\ byte\ armazenado\ na\ posi\u00E7ao\ informada.\n
+numComments=3

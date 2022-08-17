@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=FabricaDeComputadorIntel
+comment0.text=Classe\ FabricaDeComputadorIntel.\ Cria\ um\ computador\ para\ a\ arquitetura\ Intel.
+comment1.params=
+comment1.target=FabricaDeComputadorIntel()
+comment2.params=
+comment2.target=CPUIF\ criarCPU()
+comment2.text=\ M\u00E9todo\ que\ retorna\ uma\ CPUIF,\ que\ pode\ referenciar\ qualquer\ classe\ que\n\ implemente\ esta\ interface.\n\ @return\ Retorna\ uma\ CPUIF,\ que\ pode\ referenciar\ qualquer\ classe\ que\ implemente\ esta\n\ interface.\n
+comment3.params=
+comment3.target=DiscoIF\ criarDisco()
+comment3.text=\ M\u00E9todo\ que\ retorna\ um\ DiscoIF,\ que\ pode\ referenciar\ qualquer\ classe\ que\n\ implemente\ esta\ interface.\n\ @return\ Retorna\ uma\ DiscoIF,\ que\ pode\ referenciar\ qualquer\ classe\ que\ implemente\ esta\n\ interface.\n
+comment4.params=
+comment4.target=MemoriaIF\ criarMemoria()
+comment4.text=\ M\u00E9todo\ que\ retorna\ uma\ MemoriaIF,\ que\ pode\ referenciar\ qualquer\ classe\ que\n\ implemente\ esta\ interface.\n\ @return\ Retorna\ uma\ MemoriaIF,\ que\ pode\ referenciar\ qualquer\ classe\ que\ implemente\ esta\n\ interface.\n
+comment5.params=
+comment5.target=CPUIF\ selectCPU()
+comment6.params=
+comment6.target=MemoriaIF\ selectMemory()
+comment7.params=
+comment7.target=DiscoIF\ selectDisco()
+numComments=8

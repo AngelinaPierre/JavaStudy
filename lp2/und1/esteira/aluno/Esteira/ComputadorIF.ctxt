@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ComputadorIF
+comment0.text=\n\ Write\ a\ description\ of\ interface\ ComputadorIF\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ ligar()
+comment1.text=M\uFFFDtodo\ que\ liga\ o\ Computador.
+comment2.params=
+comment2.target=void\ desligar()
+comment2.text=M\uFFFDtodo\ que\ desliga\ o\ Computador.
+numComments=3

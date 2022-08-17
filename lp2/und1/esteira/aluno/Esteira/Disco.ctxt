@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Disco
+comment0.text=Classe\ Disco,\ pertence\ a\ arquitetura\ Intel.
+comment1.params=
+comment1.target=Disco()
+comment2.params=end\ b
+comment2.target=void\ setBloco(int,\ char)
+comment2.text=\ Metodo\ que\ insere\ o\ byte\ <CODE>b</CODE>\ no\ endere\u00E7o\ <CODE>end</CODE>\ do\ disco.\n\ @param\ end\ Endere\u00E7o\ onde\ sera\ armazenado\ o\ byte\ <CODE>b</CODE>.\n\ @param\ b\ Byte\ a\ ser\ armazenado\ no\ endere\u00E7o\ <CODE>end</CODE>.\n
+comment3.params=end
+comment3.target=char\ getBloco(int)
+comment3.text=\ M\uFFFDtodo\ que\ retorna\ o\ byte\ contido\ no\ endere\uFFFDo\ <CODE>end</CODE>\ do\ disco.\n\ @param\ end\ Posi\uFFFD\uFFFDo\ do\ disco\ de\ onde\ ser\uFFFD\ retornado\ o\ valor.\n\ @return\ Retorna\ o\ valor\ do\ byte\ contido\ na\ posi\uFFFD\uFFFDo\ <CODE>end</CODE>.\n
+numComments=4

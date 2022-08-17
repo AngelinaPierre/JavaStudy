@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DiscoIF
+comment0.text=\n\ Interface\ de\ Disco,\ qualquer\ classe\ que\ queira\ simular\ o\ funcionamento\n\ de\ um\ disco\ deve\ implementar\ os\ metodos\ aqui\ descritos.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=end\ b
+comment1.target=void\ setBloco(int,\ char)
+comment1.text=\ Metodo\ que\ insere\ o\ byte\ <CODE>b</CODE>\ no\ endereeo\ <CODE>end</CODE>\ do\ disco.\n\ Qualquer\ classe\ que\ queira\ implementar\ esta\ interface\ deve\ implementar\ este\n\ metodo.\n\ @param\ end\ Endere\u00E7o\ onde\ sera\ armazenado\ o\ byte\ <CODE>b</CODE>.\n\ @param\ b\ Byte\ a\ ser\ armazenado\ no\ endere\u00E7o\ <CODE>end</CODE>.\n
+comment2.params=end
+comment2.target=char\ getBloco(int)
+comment2.text=\ M\uFFFDtodo\ que\ retorna\ o\ byte\ contido\ no\ endere\uFFFDo\ <CODE>end</CODE>\ do\ disco.\n\ Qualquer\ classe\ que\ queira\ implementar\ esta\ interface\ deve\ implementar\ este\n\ m\uFFFDtodo.\n\ @param\ end\ Endere\uFFFDo\ do\ disco\ de\ onde\ ser\uFFFD\ retornado\ o\ valor.\n\ @return\ Retorna\ o\ valor\ do\ byte\ contido\ na\ posi\uFFFD\uFFFDo\ <CODE>end</CODE>.\n
+numComments=3

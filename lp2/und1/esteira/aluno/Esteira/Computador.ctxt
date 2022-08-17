@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Computador
+comment0.text=\ Classe\ computador.\ Todo\ computador\ possui\ pelo\ menos\ um\ disco,\ uma\ memoria\ e\ uma\n\ CPU,\ devendo\ todos\ eles\ serem\ compativeis\ com\ a\ arquitetura\ utilizada\ pelo\n\ computador.\ Utiliza\ a\ arquitetura\ Intel.\n
+comment1.params=fabrica
+comment1.target=Computador(FabricaAB)
+comment1.text=\ Construtor\ padrao\ da\ Classe\ Computador.\ \n\ Cria\ um\ Disco,\ uma\ CPU\ e\ uma\ Memoria\n\ para\ este\ computador.\n
+comment2.params=
+comment2.target=Computador()
+comment3.params=
+comment3.target=FabricaAB\ criaFabricaDeComputador()
+comment4.params=
+comment4.target=void\ ligar()
+comment4.text=M\uFFFDtodo\ que\ liga\ o\ Computador.
+comment5.params=
+comment5.target=void\ desligar()
+comment5.text=M\uFFFDtodo\ que\ ldesiga\ o\ Computador.
+numComments=6

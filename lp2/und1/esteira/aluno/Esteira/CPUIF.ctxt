@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=CPUIF
+comment0.text=\ \n\ Interface\ que\ deve\ ser\ implementada\ por\ toda\ classe\ que\ deseja\ implementar\n\ o\ funcionamento\ de\ uma\ CPU.\n
+comment1.params=x\ y
+comment1.target=int\ somar(int,\ int)
+comment2.params=x\ y
+comment2.target=int\ subtrair(int,\ int)
+comment3.params=x\ y
+comment3.target=int\ multiplicar(int,\ int)
+comment4.params=x\ y
+comment4.target=float\ dividir(int,\ int)
+numComments=5

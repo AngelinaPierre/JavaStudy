@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=FabricaAB
+comment0.text=\n\ Abstract\ class\ FabricaAB\ -\ write\ a\ description\ of\ the\ class\ here\n\n\ @author\ (your\ name\ here)\n\ @version\ (version\ number\ or\ date\ here)\n
+comment1.params=
+comment1.target=CPUIF\ criarCPU()
+comment2.params=
+comment2.target=MemoriaIF\ criarMemoria()
+comment3.params=
+comment3.target=DiscoIF\ criarDisco()
+comment4.params=
+comment4.target=CPUIF\ selectCPU()
+comment5.params=
+comment5.target=MemoriaIF\ selectMemory()
+comment6.params=
+comment6.target=DiscoIF\ selectDisco()
+numComments=7
