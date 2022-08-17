@@ -36,7 +36,21 @@ public class Pessoa{
         this.ano_nascimento = ano;
     }
 
+    // overriding
     public String toString(){
         return "Nome: " + this.nome + " \nAno Nascimento: " + this.ano_nascimento;
     }
+    // overloading
+    public void mensagem(){
+        System.out.println("Esta é a minha mensagem...");
+    }
+
+    public void mensagem(String msg){
+        System.out.println(msg);
+    }
+    public void mensagem(String msg, int n){
+        System.out.println(msg + n);
+    }
+
+
 }

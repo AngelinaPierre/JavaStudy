@@ -12,6 +12,8 @@ public class Aluno extends Pessoa{
     }
 
     // GES
+
+    // metodo sobrescrito/ overriding
     public String getNome(){
         return "Aluno: " + super.getNome();
     }

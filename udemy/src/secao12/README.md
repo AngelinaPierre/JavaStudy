@@ -243,12 +243,52 @@ public String getNome(){
 ## Sobrecarga de método
 <br>
 
+A `Sobrecarga de método` tambem é conhecida como `overloading`. Ocorre quando, sobrescrevemos um metodo na mesma classe de declaração.
+
+- Como exemplo, temos o `construtor vazio` e o `construtor com parametros`.
+~~~
+public Pessoa(){}
+
+public Pessoa(String nome,String email, int ano_nascimento){}
+~~~
+
+- Outro exemplo...
+
+~~~
+public void mensagem(){
+    System.out.println("Esta é a minha mensagem...");
+}
+public void mensagem(String msg){
+    System.out.println(msg);
+}
+~~~ 
+
+`Metodos sobrecarregados` so podem existir caso os `parametros` sejam diferentes.
+
 <br>
 <hr>
 <br>
 
 ## Sobrescrita de método
 <br>
+
+A `Sobrescrita de método` tbm é conhecida como `overriding`. 
+- Ocorre quando sobrescrevermos metodos da `classe pai` na `classe filha`.
+- Ja utilizamos a sobrescrita quando usamos o método `toString()` de maneiras diferentes nas classes `Pessoas, Alunos`.
+
+
+~~~
+[CLASSE PROFESSOR]
+
+public String getNome(){
+    return "Professor: " + super.getNome(); 
+}
+
+[CLASSE ALUNO]
+public String getNome(){
+    return "Aluno: " + super.getNome();
+}
+~~~ 
 
 <br>
 <hr>

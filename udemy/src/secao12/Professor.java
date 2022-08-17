@@ -10,6 +10,7 @@ public class Professor extends Pessoa{
     }
     // setter and getters
 
+    // metodo sobrescrito/ overriding
     public String getNome(){
         return "Professor: " + super.getNome(); 
     }
