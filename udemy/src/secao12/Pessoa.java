@@ -1,6 +1,6 @@
 package src.secao12;
 // classe base/ classe mae/ classe pai/ super classe/ classe generica
-public class Pessoa{
+public  abstract class Pessoa{
     private String nome,email;
     private int ano_nascimento;
 
@@ -40,7 +40,7 @@ public class Pessoa{
     public String toString(){
         return "Nome: " + this.nome + " \nAno Nascimento: " + this.ano_nascimento;
     }
-    // overloading
+    // overloading 
     public void mensagem(){
         System.out.println("Esta é a minha mensagem...");
     }
@@ -52,5 +52,6 @@ public class Pessoa{
         System.out.println(msg + n);
     }
 
-
+    // declaração de um metodo abstrato
+    public abstract void outra_mensagem(String text);
 }

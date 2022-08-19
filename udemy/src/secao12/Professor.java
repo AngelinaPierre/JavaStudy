@@ -22,7 +22,14 @@ public class Professor extends Pessoa{
         this.matricula = number;
     }
 
+    // Override
     public String toString(){
         return super.toString() + "\n Matricula: " + this.matricula;
+    }
+
+    @Override
+    public void outra_mensagem(String text) {
+        System.out.println(text);
+        
     }
 }

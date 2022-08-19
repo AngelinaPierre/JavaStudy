@@ -28,4 +28,13 @@ public class Aluno extends Pessoa{
     public String toString(){
         return super.toString() + "\nR.A: " + this.ra;
     }
+
+
+    // IMPLEMENTAÇÃO DE METODOS OBRIGATORIOS.
+    @Override
+    public void outra_mensagem(String text) {
+        System.out.println(text);
+        
+    }
+
 }
