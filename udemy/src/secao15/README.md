@@ -148,6 +148,63 @@ public class Programa34 {
 ## Métodos Estáticos
 <br>
 
+Vamos criar o `Programa35` para entendermos melhor como funciona os `Métodos Estáticos`.
+
+- Um `Método Estático` não depende de uma instância da classe para ser utilizado.
+- Pode-se utilizar conforme:
+  - `NomeDaClasse.metodo()`
+
+No `Programa34` tivemos que criar uma instancia de uma classe para podermos utilizar seus metodos, como por exemplo `c1.getNome()`. Porem, na classe `Conta` criamos um `Atributo Estático` onde não foi preciso criar uma instancia para acessa-lo bastou fazermos `Conta.contador`. O mesmo vale para `Métodos Estáticos`.
+
+- Vamos criar uma `Método Estático` na nossa classe conta para exemplificar isso.
+
+~~~
+public static int proximaConta(){
+    return Conta.contador; 
+}
+~~~ 
+
+- No nosso `Programa35` não vamos nem precisar instanciar um objeto...
+
+~~~
+package src.secao15;
+
+public class Programa35{
+    public static void main(String[] args) {
+        System.out.println("A próxima conta será: " + Conta.proximaConta());
+    }
+} 
+// output: A próxima conta será: 1
+~~~
+
+- Percebam que nem precisamos instanciar um objeto da classe para utilizar esse `Método Estático`.
+- A diferença para os `Atributos Estáticos` é que não à compartilhamento de valores, os `Métodos Estáticos` executam uma ação.
+- Se tirarmos a palavra `static` do nosso método, nosso programa irá dar erro, pois iremos passar a precisar de uma instancia da classe para executa-lo.
+
+~~~
+[CLASSE CONTA]
+public int proximaConta(){
+    return Conta.contador;
+} 
+
+[PROGRAMA35]
+
+package src.secao15;
+
+public class Programa35{
+    public static void main(String[] args) {
+
+        Conta c1 = new Conta("Angelina Pierre");
+        System.out.println("Número da conta: " + c1.getNumero());
+        System.out.println("Cliente: " + c1.getCliente());
+
+        // System.out.println("A próxima conta será: " + Conta.proximaConta());
+
+        System.out.println(c1.proximaConta());
+    }
+}
+~~~
+
 <br>
 <hr>
 <br>

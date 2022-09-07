@@ -20,4 +20,11 @@ public class Conta{
     public String getCliente(){
         return this.cliente;
     }
+
+    // public static int proximaConta(){
+    //     return Conta.contador;
+    // }
+    public int proximaConta(){
+        return Conta.contador;
+    }
 }
